@@ -114,3 +114,6 @@ display: block;
 .education-details ul {
     padding-left: 20px;
 }
+.navbar {
+background-color: #f5efef; justify-content: center; padding: 0.5rem 0;
+}
