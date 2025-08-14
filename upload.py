@@ -1,8 +1,8 @@
 import streamlit as st
 
-st.set_page_config(page_title="Test App", page_icon="🚀")
+st.set_page_config(page_title="Test App")
 
-st.title("🚀 Streamlit Placeholder App")
+st.title("Streamlit Placeholder App")
 st.write("This is a test app to see if Streamlit is running on the cloud.")
 
 # Simple input to test interaction
@@ -17,7 +17,7 @@ if uploaded_file:
     if uploaded_file.type.startswith("image/"):
         from PIL import Image
         img = Image.open(uploaded_file)
-        st.image(img, caption="Uploaded image", use_column_width=True)
+        st.image(img, caption="Uploaded image", use_container_width=True)
 
 # Optional: display GitHub repo info if you connect a token/env variable
 import os
