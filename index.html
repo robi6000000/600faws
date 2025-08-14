@@ -7,9 +7,9 @@
   <title>600faws</title>
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
+ -->
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,116 +22,51 @@
 </header>
 
   <!-- Navigation -->
-<div id="navbar"></div>
-
+<!-- <nav class="navbar" id="navbar"></nav>
 <script>
-  fetch("/myblog/nav.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar").innerHTML = data;
-    });
-</script>
+  const pathParts = window.location.pathname.split('/');
+  const siteRootIndex = pathParts.indexOf('600faws'); // name of your repo folder
+  const basePath = siteRootIndex !== -1 
+    ? '/' + pathParts.slice(1, siteRootIndex + 1).join('/') + '/'
+    : '/';
+
+  fetch(basePath + 'nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar').innerHTML = html;
+      document.querySelectorAll('#navbar a[data-link]').forEach(link => {
+        link.href = basePath + link.getAttribute('data-link');
+      });
+    })
+    .catch(err => console.error('Error loading navbar:', err));
+</script> -->
 
   <!-- Education Section -->
   <section class="section" id="music">
+
     <h2>Music</h2>
-    <div class="music-intro">
+    <div class="music-post">
 
-      <p><em>Sept 2022 – Jun 2026</em></p>
-      <p><strong>Faculty of Mathematics, Physics and Informatics</strong>, Comenius University Bratislava</p>
-        <p>Field of Study: Data Science</p>
-        <p>Coursework: Data Management, Data Visualisation, Statistical Inference, Data Structures and Algorithms, Programming (Python, C++, R), Web Technologies (HTML, CSS, JS)</p>
-      
+      <!-- image, title, post text> -->
+      <img src="images/1aa1edd180a1fae23c7937f18f3fc02c.jpg" alt="Music Image" width="300" height="300">
+      <h4>Music Title</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum auctor turpis nec turpis ultrices, in feugiat sapien placerat. Curabitur sit amet sapien a elit tincidunt sollicitudin. Phasellus facilisis, lorem ac faucibus gravida, risus elit pulvinar urna, at tempus lectus dolor eget sapien.</p>
     </div>
+
   </section>
 
-  <!-- Projects Section -->
-<section class="section projects" id="projects">
-  <h2>Projects</h2>
-  <div class="container project-grid">
 
-    <!-- COVID Project -->
-    <div class="portfolio-wrap">
-      <img src="coronavirus.jpg" class="img-fluid" alt="Covid-19 Project" style="border-radius: 8px;">
-      <div class="portfolio-info">
-        <h5>Determining quality of Covid-19 genome samples</h5>
-        <div class="d-flex">
-          <a href="https://github.com/robi6000000/robi6000000.github.io/tree/main/covid%20project" title="GitHub"><i class="bi bi-link-45deg"></i></a>
-          <a href="https://robi6000000.github.io/covid%20project/Správa - ŠPARK (5).pdf" title="Report" target="_blank"><i class="bi bi-file-earmark"></i></a>
-        </div>
-      </div>
-    </div>
+<!-- <div id="footer"></div>
 
-    <!-- Wine Quality -->
-    <div class="portfolio-wrap">
-      <img src="wine.png" class="img-fluid" alt="Wine Quality">
-      <div class="portfolio-info">
-        <h5>Wine Quality Prediction - Linear Programming</h5>
-        <div class="d-flex">
-          <a href="https://github.com/robi6000000/robi6000000.github.io/tree/main/A04%20-%20preikcia%20kvality%20vin" title="GitHub"><i class="bi bi-link-45deg"></i></a>
-          <a href="https://robi6000000.github.io/A04%20-%20preikcia%20kvality%20vin/report.pdf" title="Report" target="_blank"><i class="bi bi-file-earmark"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Billboard Scraper -->
-    <div class="portfolio-wrap">
-      <img src="billboard-logo-placeholder-1548-1614291410.png" class="img-fluid" alt="Billboard Scraper">
-      <div class="portfolio-info">
-        <h5>Billboard Charts Wikipedia Scraper</h5>
-        <div class="d-flex">
-          <a href="https://github.com/robi6000000/robi6000000.github.io/tree/main/billboard" title="GitHub"><i class="bi bi-link-45deg"></i></a>
-          <a href="https://robi6000000.github.io/billboard/project_report_kenderes2.pdf" title="Report" target="_blank"><i class="bi bi-file-earmark"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Statistical Inference -->
-    <div class="portfolio-wrap">
-      <img src="GOLD-6487-CareerGuide-Batch04-Images-GraphCharts-02-Bar.jpg" class="img-fluid" alt="Statistical Inference">
-      <div class="portfolio-info">
-        <h5>Statistical Inference Project - Tests, Regression</h5>
-        <div class="d-flex">
-          <a href="https://github.com/robi6000000/robi6000000.github.io/tree/main/statprojekt" title="GitHub"><i class="bi bi-link-45deg"></i></a>
-          <a href="https://robi6000000.github.io/statprojekt/Statisticke_metody___kenderes.pdf" title="Report" target="_blank"><i class="bi bi-file-earmark"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Spotify -->
-    <div class="portfolio-wrap">
-      <img src="spotify_wc7u.1200.png" class="img-fluid" alt="Spotify Project">
-      <div class="portfolio-info">
-        <h5>Song Popularity Modelling – Spotify</h5>
-        <div class="d-flex">
-          <a href="https://github.com/Sammuel21/pridav-music-project" title="GitHub"><i class="bi bi-link-45deg"></i></a>
-          <a href="https://github.com/Sammuel21/pridav-music-project/blob/main/README.md" title="README" target="_blank"><i class="bi bi-file-earmark"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Heart Disease -->
-    <div class="portfolio-wrap">
-      <img src="CardiovascularSystem-1155264877-696x502.jpg" class="img-fluid" alt="Heart Disease Prediction">
-      <div class="portfolio-info">
-        <h5>Heart Disease Prediction - Logistic Regression</h5>
-        <div class="d-flex">
-          <a href="https://github.com/NataliaKrebesova/mvo_project_2025" title="GitHub"><i class="bi bi-link-45deg"></i></a>
-          <a href="https://robi6000000.github.io/mvo/mvo_104bpm_project.pdf" title="Report" target="_blank"><i class="bi bi-file-earmark"></i></a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-  <!-- Contact Section -->
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <p class="text-center">Email: robertkenderes350@gmail.com</p>
-    <p class="text-center">Phone: +421 907 543 328</p>
-  </section>
-
-</body>
+<script>
+  const footerPath = basePath + 'footer.html';
+  fetch(footerPath)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+    })
+    .catch(err => console.error('Error loading footer:', err));
+</script>
+</body> -->
 
 </html>

@@ -2,46 +2,67 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>600faws</title>
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"> -->
 
-
-    <link rel="stylesheet" href="style.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
-  <!-- Name -->
-  <header class="section">
-  <h1>600faws</h1>
-</header>
+  <!-- Header -->
+  <header>
+    <h1>600faws</h1>
+  </header>
 
   <!-- Navigation -->
-<div id="navbar"></div>
+  <nav id="navbar"></nav>
 
-<script>
-  fetch("/myblog/nav.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar").innerHTML = data;
-    });
-</script>
+  <!-- Main Content -->
+  <main>
+    <section>
+      <h2>Pictures</h2>
+      <p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</em></p>
+      <p><strong>Vestibulum auctor turpis nec turpis ultrices, in feugiat sapien placerat.</strong></p>
+      <p>Curabitur sit amet sapien a elit tincidunt sollicitudin.</p>
+      <p>Phasellus facilisis, lorem ac faucibus gravida, risus elit pulvinar urna, at tempus lectus dolor eget sapien.</p>
+    </section>
+  </main>
 
+  <!-- Footer -->
+  <footer id="footer"></footer>
 
-  <!-- Education Section -->
-  <section class="section" id="pictures">
-    <h2>Pictures</h2>
-    <div class="pictures-intro">
+  <!-- Scripts -->
+  <script>
+    const pathParts = window.location.pathname.split('/');
+    const siteRootIndex = pathParts.indexOf('600faws');
+    const basePath = siteRootIndex !== -1
+      ? '/' + pathParts.slice(1, siteRootIndex + 1).join('/') + '/'
+      : '/';
 
-      <p><em>Sept 2022 – Jun 2026</em></p>
-      <p><strong>Faculty of Mathematics, Physics and Informatics</strong>, Comenius University Bratislava</p>
-        <p>Field of Study: Data Science</p>
-        <p>Coursework: Data Management, Data Visualisation, Statistical Inference, Data Structures and Algorithms, Programming (Python, C++, R), Web Technologies (HTML, CSS, JS)</p>
-      
-    </div>
-  </section>
+    // Load navbar
+    fetch(basePath + 'nav.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+        document.querySelectorAll('#navbar a[data-link]').forEach(link => {
+          link.href = basePath + link.getAttribute('data-link');
+        });
+      })
+      .catch(err => console.error('Error loading navbar:', err));
+
+    // Load footer
+    fetch(basePath + 'footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer').innerHTML = html)
+      .catch(err => console.error('Error loading footer:', err));
+  </script>
+
+</body>
+</html>
