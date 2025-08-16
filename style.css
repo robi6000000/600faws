@@ -1,16 +1,44 @@
+
+/* colors */
+body, .column, .side-column, .main-column {
+  background-color: #d5bed5;
+}
+.music-post {
+  background-color: rgb(99, 90, 102);
+}
+.music-post-text h4 {
+  color: rgb(193, 204, 214);
+}
+
+.music-post-text p{
+  color: rgb(193, 204, 214);}
+  
+audio::-webkit-media-controls-panel {
+  background-color: #d5bed5;
+}
+
+/* body */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+/* header */
+header {
+  /* background-color: #4a2c4a; */
+  color: rgb(0, 0, 0);
+  padding: 0px;
+  text-align: center;
+  font: 600 2.5rem trebuchet ms, sans-serif;
 }
 /* Section Title */
 #music h2 {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font: 600 2rem trebuchet ms, sans-serif;
+
+  margin-bottom: 0px;
 }
 
-/* Flex layout for columns */
+/* actual page layout */
 .music-layout {
     display: flex;
     flex-wrap: wrap;
@@ -22,25 +50,47 @@ body {
 
 .column {
   padding: 20px;
-  background-color: #ffffff;
-  border: 1px solid #ddd; 
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .side-column {
-  flex: 1;              
-  background-color: #ffcccc;
+  flex: .5;  
+  font: 600 1.5rem trebuchet ms, sans-serif;            
 }
 
 .main-column {
-  flex: 3;             
-  background-color: #cce5ff;
+  flex: 1.5;             
 }
 
+/* music post insides */
 .music-post {
   margin-bottom: 20px;
-  background-color: aquamarine;
+  padding: 10px;
+  border-radius: 8px;
 }
+
+.music-post img {
+  /* max-width: 300px; */
+  width: 300px;
+  height: 300px;
+  object-fit: fill;
+  border-radius: 10px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  border: #7c707c 4px solid;
+}
+.music-post-text h4 {
+  margin: 10px 5px;
+  text-align: left;
+  font: 600 1.5rem trebuchet ms, sans-serif;
+}
+.music-post-text p{
+  padding: 10px 5px;
+  text-align: left;
+  font: 400 1rem trebuchet ms, sans-serif;
+}
+.music-post-audio {
+  width: 100%;
+
+}
+
