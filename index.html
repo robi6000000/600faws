@@ -6,20 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>600faws</title>
 
-  <!-- Fonts & Icons -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
- -->
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <!-- Name -->
-  <header class="section">
+  <!-- <header class="section">
   <h1>600faws</h1>
-</header>
+</header> -->
 
   <!-- Navigation -->
 <!-- <nav class="navbar" id="navbar"></nav>
@@ -41,19 +36,47 @@
     .catch(err => console.error('Error loading navbar:', err));
 </script> -->
 
-  <!-- Education Section -->
-  <section class="section" id="music">
 
-    <h2>Music</h2>
-    <div class="music-post">
+<section id="music">
+  <h2>Music</h2>
 
-      <!-- image, title, post text> -->
-      <img src="images/1aa1edd180a1fae23c7937f18f3fc02c.jpg" alt="Music Image" width="300" height="300">
-      <h4>Music Title</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum auctor turpis nec turpis ultrices, in feugiat sapien placerat. Curabitur sit amet sapien a elit tincidunt sollicitudin. Phasellus facilisis, lorem ac faucibus gravida, risus elit pulvinar urna, at tempus lectus dolor eget sapien.</p>
+  <div class="music-layout">
+    <div class="column side-column">Side Left</div>
+
+    <div class="column main-column">
+      <div class="music-post">
+        <div class="music-post-image">
+          <img src="images/1aa1edd180a1fae23c7937f18f3fc02c.jpg" alt="Music Image" width="300" height="300">
+        </div>
+        <div class="music-post-title">
+          <h4>Music Title</h4>
+        </div>
+        <div class="music-post-description">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum auctor turpis nec turpis ultrices, in feugiat sapien placerat.</p>
+        </div>
+      </div>
+
+      <div class="music-post">
+        <div class="music-post-image">
+          <img src="images/8tsxeu.png" alt="Music Image" width="300" height="300">
+        </div>
+        <div class="music-post-title">
+          <h4>Music Title 2</h4>
+        </div>
+        <div class="music-post-description">
+          <p>Curabitur sit amet sapien a elit tincidunt sollicitudin. Phasellus facilisis lorem ac faucibus gravida.</p>
+        </div>
+      </div>
     </div>
 
-  </section>
+    <div class="column side-column">Side Right</div>
+  </div>
+</section> 
+
+
+
+    
+
 
 
 <!-- <div id="footer"></div>
@@ -66,7 +89,6 @@
       document.getElementById('footer').innerHTML = html;
     })
     .catch(err => console.error('Error loading footer:', err));
-</script>
-</body> -->
-
+</script> -->
+</body>
 </html>

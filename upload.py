@@ -19,7 +19,6 @@ if uploaded_file:
         img = Image.open(uploaded_file)
         st.image(img, caption="Uploaded image", use_container_width=True)
 
-# Optional: display GitHub repo info if you connect a token/env variable
 import os
 gh_user = os.getenv("GITHUB_USER")
 gh_repo = os.getenv("GITHUB_REPO")
