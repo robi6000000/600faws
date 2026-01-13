@@ -1,0 +1,20 @@
+
+x open vpn nainstalovat, prihlasit na vpnku a potom ssh
+
+x certifikat zo stranky je config file do openvpn
+
+x ak sa do nedele neprihlasim na server, dat andrejovi vediet.
+
+veci sa budu pustat cez slurm (workload manager)
+
+pozriet slurm+server navod z mailu od andreja
+
+pobavit sa s chatbotom o modelovani multidimensional dat, pogooglit, ked tam je tolko vela stlpcov, urcite sa nieco fitne. - ako to obist
+
+pridat tie maticove premenne do datasetu, double_indexnut 
+
+
+
+
+
+
