@@ -17,10 +17,10 @@
   </header>
 
     <!-- Navigation -->
-  <!-- <nav class="navbar" id="navbar"></nav>
+  <nav class="navbar" id="navbar">
   <script>
     const pathParts = window.location.pathname.split('/');
-    const siteRootIndex = pathParts.indexOf('600faws'); // name of your repo folder
+    const siteRootIndex = pathParts.indexOf('600faws'); 
     const basePath = siteRootIndex !== -1 
       ? '/' + pathParts.slice(1, siteRootIndex + 1).join('/') + '/'
       : '/';
@@ -34,57 +34,55 @@
         });
       })
       .catch(err => console.error('Error loading navbar:', err));
-  </script> -->
+  </script>
+</nav>
 
+<div class="page-layout">
+  <div class="column side-column"></div>
 
-  <section id="music">
-    <h2>Music</h2>
+  <div class="column main-column">
 
-    <div class="music-layout">
-      <div class="column side-column">Side A</div>
+    <section id="music">
+      <h2>Music</h2>
+      <script>
+        const listEl = document.getElementById('music');
 
-      <div class="column main-column">
-
-        <script>
-          const listEl = document.querySelector('div.column.main-column');
-
-          fetch('post_data.json')
-            .then(res => res.json())
-            // prin t the data to the console
-            .then(data => {
-              data.forEach(post => {
-                listEl.insertAdjacentHTML('beforeend',
-                  `
-                  <div class="music-post" id>
-
-                      <div class="music-post-image">
-                        <img src=${post.image} alt="Music Image">
-                      </div>
-
-                      <div class="music-post-text">
-                        <h4>${post.title}</h4>
-                        <p>${post.description}</p>
-                      </div>
-
-                      <div class="music-post-audio">  
-                        <audio controls>
-                          <source src=${post.audio} type="audio/mpeg">
-                        </audio>
-                      </div>
-                      
+        fetch('post_data.json')
+          .then(res => res.json())
+          .then(data => {
+            data.forEach(post => {
+              listEl.insertAdjacentHTML('afterbegin',
+                `
+                <div class="music-post">
+                  <div class="music-post-image">
+                    <img src="${post.image}" alt="Music Image">
                   </div>
-                  `
-                );
-              })
+                  <div class="music-post-text">
+                    <h4>${post.title}</h4>
+                    <p>${post.description}</p>
+                    </div>
+                    <div class="music-post-audio">
+                      <audio controls>
+                        <source src="${post.audio}" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    <p><em>${post.date}</em></p>
+                </div>
+                `
+              );
             });
+          });
+      </script>
+    </section>
 
-        </script>
-            
-      </div>
+    <section id="pictures">
+      <h2>Pictures</h2>
+    </section>
 
-      <div class="column side-column">Side B</div>
-    </div>
-  </section> 
+  </div>
+
+  <div class="column side-column"></div>
+</div>
 
 
 
@@ -92,7 +90,7 @@
 
 
 
-  <!-- <div id="footer"></div>
+  <div id="footer"></div>
 
   <script>
     const footerPath = basePath + 'footer.html';
@@ -102,6 +100,6 @@
         document.getElementById('footer').innerHTML = html;
       })
       .catch(err => console.error('Error loading footer:', err));
-  </script> -->
+  </script>
   </body>
   </html>

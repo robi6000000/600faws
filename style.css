@@ -39,7 +39,7 @@ header {
 }
 
 /* actual page layout */
-.music-layout {
+.page-layout {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -94,3 +94,34 @@ header {
 
 }
 
+/* center footer */
+footer {
+  text-align: center;
+  padding: 1px;
+  background-color: #4a2c4a;
+  color: white;
+  font: 400 1rem trebuchet ms, sans-serif;
+}
+
+nav ul {
+  list-style-type: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font: 400 1rem trebuchet ms, sans-serif;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.music-post em {
+  font-size: 0.9rem;
+  color: rgb(193, 204, 214);
+}
